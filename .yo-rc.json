@@ -1,0 +1,16 @@
+{
+  "generator-easy-ui5": {
+    "projectname": "myUI5App",
+    "namespace": "com.myorg",
+    "platform": "Cloud Foundry HTML5 Application Repository",
+    "viewtype": "XML",
+    "viewname": "MainView",
+    "ui5libs": "Content delivery network (SAPUI5)",
+    "newdir": true,
+    "namespaceURI": "com/myorg",
+    "uimodules": [
+      "uimodule"
+    ],
+    "setupCompleted": true
+  }
+}
