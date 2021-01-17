@@ -1,12 +1,27 @@
- <mvc:View controllerName="com.myorg.myUI5App.controller.MainView"
-  displayBlock="true"
-  xmlns="sap.m"
-  xmlns:mvc="sap.ui.core.mvc">
-  <App id="idAppControl" >
-    <pages>
-      <Page title="{i18n>title}">
-        <content></content>
-      </Page>
-    </pages>
-  </App>
-</mvc:View>
+<View controllerName="com.myorg.myUI5App.controller.MainView" displayBlock="true" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="IMDB" 
+          subheader="Movie Application" press="tilePress" url="form" >
+						<TileContent>
+							<ImageContent src="resources/img/profile.jpeg" />
+						</TileContent>
+					</GenericTile>
+              	
+
+          <!-- <GenericTile
+				backgroundImage="resources/img/profile.jpeg"
+				frameType="TwoByOne" press="press">
+				<TileContent footer="August 21, 2016">
+					<NewsContent
+						contentText="SAP Unveils Powerful New Player Comparision Tool Exclusively on NFL.com"
+						subheader="Today, SAP News" />
+				</TileContent>
+			</GenericTile> -->
+				</content>
+			</Page>
+		</pages>
+	</App>
+</View>

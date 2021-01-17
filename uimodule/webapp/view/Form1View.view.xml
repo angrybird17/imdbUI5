@@ -1,0 +1,127 @@
+<View controllerName="com.myorg.myUI5App.controller.Form1View" displayBlock="true" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+xmlns:f="sap.f">
+	<App id="idAppControl">
+		<pages>
+			<!-- <Page> -->
+				<!-- <content> -->
+					<!-- <VBox class="vbox1" fitContainer="true" width="100%">
+							<Carousel height="300px" loop="true">
+								<pages>
+									<Image src="https://i.pinimg.com/originals/31/ca/f2/31caf2fa888d01cd7658ed5d41a5798a.jpg" height="250px" width="600px"/>
+									<Image
+										src="https://www.filmibeat.com/ph-big/2019/08/miss-india_156690381710.jpg"
+										height="250px" width="600px"/>
+									<Image src="https://images-na.ssl-images-amazon.com/images/S/sgp-catalog-images/region_US/sphe-pursuit_of_happyness_2006-Full-Image_GalleryCover-en-US-1484001256987._UY500_UX667_RI_VLlDKyg2xplhPOpi73ReetPsQLmrUs3aG_TTW_.jpg"
+										height="250px" width="600px"/>
+									<Image src="https://latestnews.fresherslive.com/images/articles/width-900/2020/10/23/akasam-nee-haddura-movie-release-date-time-in-ott-amazon-prime-5f92eeab1e265-1603464875.jpg"
+										height="250px"/>
+								</pages>
+							</Carousel>
+						</VBox>
+					<VBox fitContainer="true" width="100%" class="sapUiTinyMargin">
+						<Label text="Select a product" labelFor="inputValueHelpCustomIcon" />
+						<Input class="sapUiTinyMargin" type="Text" fieldWidth="20%" placeholder="Enter product" showValueHelp="true" valueHelpIconSrc="sap-icon://value-help" valueHelpRequest="handleValueHelp" valueHelpOnly="true" />
+					</VBox> -->
+
+                    <f:DynamicPage id="DynamicPage">
+				<f:title>
+					<f:DynamicPageTitle fitContent="true">
+						<f:heading>
+						<HBox >
+						<HBox alignItems="Start" fitContainer="true" justifyContent="Start">
+							<Image src="https://www.kindpng.com/picc/m/460-4608215_picture-logo-imdb-png-transparent-png.png" height="50px"/>
+							</HBox>
+							<!-- sap-icon://information -->
+							
+							<HBox alignItems="End" fitContainer="true" justifyContent="End">
+							
+							<Button
+			class="sapUiTinyMarginBeginEnd"
+			icon="sap-icon://information"
+			press=".onDefaultMessageDialogPress"/>
+                	</HBox>
+					
+					</HBox>
+						</f:heading>
+						
+					</f:DynamicPageTitle>
+				</f:title>
+				<f:header height="1000px">
+					<f:DynamicPageHeader height="1000px">
+						<VBox class="vbox1" fitContainer="true" width="100%">
+							<Carousel height="300px" loop="true">
+								<pages>
+									<Image src="https://i.pinimg.com/originals/31/ca/f2/31caf2fa888d01cd7658ed5d41a5798a.jpg" height="250px" width="600px"/>
+									<Image
+										src="https://www.filmibeat.com/ph-big/2019/08/miss-india_156690381710.jpg"
+										height="250px" width="600px"/>
+									<Image src="https://images-na.ssl-images-amazon.com/images/S/sgp-catalog-images/region_US/sphe-pursuit_of_happyness_2006-Full-Image_GalleryCover-en-US-1484001256987._UY500_UX667_RI_VLlDKyg2xplhPOpi73ReetPsQLmrUs3aG_TTW_.jpg"
+										height="250px" width="600px"/>
+									<Image src="https://latestnews.fresherslive.com/images/articles/width-900/2020/10/23/akasam-nee-haddura-movie-release-date-time-in-ott-amazon-prime-5f92eeab1e265-1603464875.jpg"
+										height="250px"/>
+								</pages>
+							</Carousel>
+						</VBox>
+                        
+
+					</f:DynamicPageHeader>
+				</f:header>
+				<f:content>
+				<VBox>
+					<HBox id="hbox1" fitContainer="true" justifyContent="SpaceAround">
+					<VBox fitContainer="true" class="sapUiTinyMargin">
+						<Label text="Select the Genre" />
+						<Select id="ComboBox1" change="_onSelectionChange" selectedKey="Inspiring" width="100%">
+                            <items>
+                                <core:Item key="Inspiring" text="Inspiring" />
+								<core:Item key="Comedy" text="Comedy" />
+								<core:Item key="Horror" text="Horror" />
+                            </items>
+                        </Select>						
+					</VBox>
+					<VBox fitContainer="true" class="sapUiTinyMargin">
+						
+
+						<Label text="Select the Movie" visible="{/visible/Inspiring}" />
+						<ComboBox visible="{/visible/Inspiring}" placeholder="Movie with Rating"
+						showSecondaryValues= "true"
+						items="{
+							path: '/movie/Inspiring',
+							sorter: { path: 'Rating' }
+						}">
+							<core:ListItem key="{Name}" text="{Name}" additionalText = "{Rating}"/>
+						</ComboBox>	
+						<Label text="Select the Movie" visible="{/visible/Comedy}" />
+						<ComboBox visible="{/visible/Comedy}" placeholder="Movie with Rating"
+						showSecondaryValues= "true"
+						items="{
+							path: '/movie/Comedy',
+							sorter: { path: 'Rating' }
+						}">
+							<core:ListItem key="{Name}" text="{Name}" additionalText = "{Rating}"/>
+						</ComboBox>	
+						<Label text="Select the Movie" visible="{/visible/Horror}" />
+						<ComboBox visible="{/visible/Horror}" placeholder="Movie with Rating"
+						showSecondaryValues= "true"
+						items="{
+							path: '/movie/Horror',
+							sorter: { path: 'Rating' }
+						}">
+							<core:ListItem key="{Name}" text="{Name}" additionalText = "{Rating}"/>
+						</ComboBox>	
+
+					</VBox>
+						
+					</HBox>
+					<HBox id="hbox2" fitContainer="true" justifyContent="Center">
+                    	<Button text="Go" type="Emphasized" press="onGoPress"/>
+                	</HBox>
+				</VBox>
+				</f:content>
+			</f:DynamicPage>
+
+				<!-- </content> -->
+			<!-- </Page> -->
+		</pages>
+	</App>
+</View>

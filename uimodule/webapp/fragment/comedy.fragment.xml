@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		noDataText="No Movie Name Found"
+		id="selectDialog"
+		title="Comedy Movies"
+		items="{path: '/movie/Comedy'}"
+		search="onValueHelpSearch"
+		confirm="onComClose"
+		cancel="onComClose"
+		valueHelpRequest="onComRequest">
+		<StandardListItem
+			title="{Name}"
+			description="{Rating}"
+			icon="sap-icon://video"
+			type="Active">
+		</StandardListItem>
+	</SelectDialog>
+</core:FragmentDefinition>

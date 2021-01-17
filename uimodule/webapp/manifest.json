@@ -8,7 +8,13 @@
       "version": "1.0.0"
     },
     "title": "{{appTitle}}",
-    "description": "{{appDescription}}"
+    "description": "{{appDescription}}",
+    "dataSources": {
+			"localDataSource": {
+				"uri": "model/data.json",
+				"type": "JSON"
+			}
+		}
   },
   "sap.ui": {
     "technology": "UI5",
@@ -52,7 +58,14 @@
         "settings": {
           "bundleName": "com.myorg.myUI5App.i18n.i18n"
         }
-      }
+      },
+      "": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {
+					"defaultBindingMode": "TwoWay"
+				},
+				"dataSource": "localDataSource"
+			}
     },
     "resources": {
       "css": [
@@ -72,6 +85,16 @@
       },
       "routes": [
         {
+					"name": "mainpage",
+					"pattern": "",
+					"target": "mainpage"
+				},
+        {
+          "name": "Form1_View",
+          "pattern": "form",
+          "target": "Form1_View"
+        },
+        {
           "name": "RouteMainView",
           "pattern": "RouteMainView",
           "target": [
@@ -85,7 +108,15 @@
           "viewLevel": 1,
           "viewId": "idAppControl",
           "viewName": "MainView"
+        },
+        "mainpage": {
+					"viewName": "MainView"
+				},
+        "Form1_View": {
+          "viewId": "form",
+          "viewName": "Form1View"
         }
+      
       }
     }
   }

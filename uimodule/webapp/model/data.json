@@ -1,0 +1,68 @@
+{
+    "genre": [
+        {
+            "id": "Inspiring",
+            "Name": "Inspiring",
+            "Icon": "sap-icon://video"
+        },
+        {
+            "id": "Fiction",
+            "Name": "Fiction",
+            "Icon": "sap-icon://video"
+        },
+        {
+            "id": "Comedy",
+            "Name": "Comedy",
+            "Icon": "sap-icon://video"
+        }
+    ],
+    "movie": {
+        "Inspiring": [
+            {
+                "Name": "Pirsuit of Happiness",
+                "Rating": "8.0"
+            },
+            {
+                "Name": "Mahanati",
+                "Rating": "8.5"
+            },
+            {
+                "Name": "Soorarai Pottru",
+                "Rating": "8.7"
+            }
+        ],
+        "Comedy": [
+            {
+                "Name": "Pilla Zamindaar",
+                "Rating": "7.7"
+            },
+            {
+                "Name": "Welcome",
+                "Rating": "6.9"
+            },
+            {
+                "Name": "Chennai Express",
+                "Rating": "6.0"
+            }
+        ],
+        "Horror": [
+            {
+                "Name": "Bhagamathie",
+                "Rating": "7.0"
+            },
+            {
+                "Name": "The Conjuring",
+                "Rating": "7.5"
+            },
+            {
+                "Name": "Pari",
+                "Rating": "6.6"
+            }
+        ]
+    },
+    "visible": {
+        "Inspiring": true,
+        "Comedy": false,
+        "Horror": false
+    }
+}

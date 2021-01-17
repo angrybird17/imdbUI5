@@ -1,0 +1,120 @@
+
+<!-- <Label text="Select the Movie" visible="{/visible/Inspiring}" />
+						<Input id="insInput" visible="{/visible/Inspiring}" placeholder="..." showValueHelp="true"
+						 valueHelpRequest=".onInspRequest" />
+						<Label text="Select the Comedy Movie" visible="{/visible/Comedy}" />
+						<Input id="comInput" visible="{/visible/Comedy}" placeholder="..." showValueHelp="true" 
+						valueHelpRequest=".onComRequest" />
+						<Label text="Select the Movie" visible="{/visible/Horror}" />
+						<Input id="horInput" visible="{/visible/Horror}" placeholder="..." showValueHelp="true" 
+						valueHelpRequest=".onHorrRequest" /> -->
+
+------- form1 view -----------------------------------------------------------------------
+
+
+onInspRequest: function (oEvent) {
+        debugger;
+        var sInputValue = oEvent.getSource().getValue(),
+          oView = this.getView();
+  
+        if (this._pValueHelpDialog != undefined) {
+          this._pValueHelpDialog = Fragment.load({
+            id: oView.getId(),
+            name: "com.myorg.myUI5App.fragment.genre",
+            controller: this
+          }).then(function (oDialog) {
+            oView.addDependent(oDialog);
+            return oDialog;
+          });
+        }
+        this._pValueHelpDialog.then(function(oDialog) {
+          // Create a filter for the binding
+          oDialog.getBinding("items").filter([new Filter("Name", FilterOperator.Contains, sInputValue)]);
+          // Open ValueHelpDialog filtered by the input's value
+          oDialog.open(sInputValue);
+        });
+      },
+      onComRequest: function (oEvent) {
+        debugger;
+        var sInputValue = oEvent.getSource().getValue(),
+          oView = this.getView();
+  
+        if (!this._pValueHelpDialog) {
+          this._pValueHelpDialog = Fragment.load({
+            id: oView.getId(),
+            name: "com.myorg.myUI5App.fragment.comedy",
+            controller: this
+          }).then(function (oDialog) {
+            oView.addDependent(oDialog);
+            return oDialog;
+          });
+        }
+        this._pValueHelpDialog.then(function(oDialog) {
+          // Create a filter for the binding
+          oDialog.getBinding("items").filter([new Filter("Name", FilterOperator.Contains, sInputValue)]);
+          // Open ValueHelpDialog filtered by the input's value
+          oDialog.open(sInputValue);
+        });
+      },
+      onHorrRequest: function (oEvent) {
+        debugger;
+        var sInputValue = oEvent.getSource().getValue(),
+          oView = this.getView();
+  
+        if (!this._pValueHelpDialog) {
+          this._pValueHelpDialog = Fragment.load({
+            id: oView.getId(),
+            name: "com.myorg.myUI5App.fragment.horror",
+            controller: this
+          }).then(function (oDialog) {
+            oView.addDependent(oDialog);
+            return oDialog;
+          });
+        }
+        this._pValueHelpDialog.then(function(oDialog) {
+          // Create a filter for the binding
+          oDialog.getBinding("items").filter([new Filter("Name", FilterOperator.Contains, sInputValue)]);
+          // Open ValueHelpDialog filtered by the input's value
+          oDialog.open(sInputValue);
+        });
+      },
+      onValueHelpSearch: function (oEvent) {
+        var sValue = oEvent.getParameter("value");
+        var oFilter = new Filter("Name", FilterOperator.Contains, sValue);
+  
+        oEvent.getSource().getBinding("items").filter([oFilter]);
+      },
+      onInspClose: function (oEvent) {
+        var oSelectedItem = oEvent.getParameter("selectedItem");
+        oEvent.getSource().getBinding("items").filter([]);
+  
+        if (!oSelectedItem) {
+          return;
+        }
+  
+        this.byId("insInput").setValue(oSelectedItem.getTitle());
+      },
+      onComClose: function (oEvent) {
+        var oSelectedItem = oEvent.getParameter("selectedItem");
+        oEvent.getSource().getBinding("items").filter([]);
+  
+        if (!oSelectedItem) {
+          return;
+        }
+  
+        this.byId("comInput").setValue(oSelectedItem.getTitle());
+      },
+      onHorrClose: function (oEvent) {
+        var oSelectedItem = oEvent.getParameter("selectedItem");
+        oEvent.getSource().getBinding("items").filter([]);
+  
+        if (!oSelectedItem) {
+          return;
+        }
+  
+        this.byId("horInput").setValue(oSelectedItem.getTitle());
+      },
+
+
+
+      ------- form1 controller --------------------------------------------------------------
