@@ -1,0 +1,96 @@
+<View controllerName="com.myorg.myUI5App.controller.MV_Detail" displayBlock="true" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+xmlns:f="sap.f" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:form="sap.ui.layout.form">
+	<App id="idAppControl">
+		<pages>
+                    <f:DynamicPage id="DynamicPage">
+				<f:title>
+					<f:DynamicPageTitle fitContent="true">
+						<f:heading>
+							<Image  src="https://www.kindpng.com/picc/m/460-4608215_picture-logo-imdb-png-transparent-png.png" height="50px"/>
+						</f:heading>
+						<f:actions>
+							<Button
+								icon="sap-icon://sys-back"
+                                type="Emphasized"
+								press="onBackPress"
+								/>
+						</f:actions>
+						
+					</f:DynamicPageTitle>
+				</f:title>
+				<f:header height="1000px">
+					<f:DynamicPageHeader height="1000px">
+						<HBox class="vbox1" fitContainer="true" justifyContent="Center">
+							<Image id="img" src="{/movieName/imgUrl}"
+										height="150px" width="400px"/>
+						</HBox>
+                        
+
+					</f:DynamicPageHeader>
+				</f:header>
+				<f:content>
+                <IconTabBar
+		id="idIconTabBar"
+		select=".onFilterSelect"
+		class="sapUiResponsiveContentPadding">
+		<items>
+                    <IconTabFilter
+				icon="sap-icon://video"
+				design="Horizontal"
+				text="TRAILER"
+				>
+                <HBox justifyContent="Center">
+                   <html:iframe width="460" height="215" src="https://www.youtube.com/embed/DMOBlEcRuw8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+				   </html:iframe>
+                </HBox>
+                </IconTabFilter>
+			<IconTabSeparator icon="sap-icon://resize-corner" />
+			<IconTabFilter
+				icon="sap-icon://company-view"
+				design="Horizontal"
+				text="FULL CAST AND CREW "
+				>
+                <SelectList
+					items="{
+						path: '/movieName/cast',
+						sorter: { path: 'actor' }
+					}">
+					<core:Item key="{actor}" text="{actor}" />
+				</SelectList>
+                </IconTabFilter>
+            <IconTabSeparator icon="sap-icon://resize-corner" />
+			<IconTabFilter
+				icon="sap-icon://request"
+				design="Horizontal"
+				text="REVIEW"
+				>
+                <form:SimpleForm editable="true">
+		<Label text="Give your Review"/>
+		<TextArea id="TypeHere"
+            placeholder="Type here..."
+			value="{/InputValue}"
+			valueLiveUpdate="{/ValueLiveUpdate}"
+			liveChange="handleLiveChange"
+		/>
+		
+	</form:SimpleForm>
+    <Label text="User Reviews: "/>
+    <MessageStrip
+                id="getProperty"
+				text="{/InputValue}"
+				type="Information"
+				showIcon="true"
+				customIcon="sap-icon://notes"
+				class="sapUiMediumMarginBottom">
+			</MessageStrip>
+        </IconTabFilter>
+                </items>
+	</IconTabBar>
+				</f:content>
+			</f:DynamicPage>
+
+				<!-- </content> -->
+			<!-- </Page> -->
+		</pages>
+	</App>
+</View>

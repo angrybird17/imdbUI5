@@ -27,22 +27,14 @@ xmlns:f="sap.f">
 				<f:title>
 					<f:DynamicPageTitle fitContent="true">
 						<f:heading>
-						<HBox >
-						<HBox alignItems="Start" fitContainer="true" justifyContent="Start">
 							<Image src="https://www.kindpng.com/picc/m/460-4608215_picture-logo-imdb-png-transparent-png.png" height="50px"/>
-							</HBox>
-							<!-- sap-icon://information -->
-							
-							<HBox alignItems="End" fitContainer="true" justifyContent="End">
-							
-							<Button
-			class="sapUiTinyMarginBeginEnd"
-			icon="sap-icon://information"
-			press=".onDefaultMessageDialogPress"/>
-                	</HBox>
-					
-					</HBox>
 						</f:heading>
+						<f:actions>
+							<Button
+								icon="sap-icon://information"
+								press=".onInfoPress"
+								/>
+						</f:actions>
 						
 					</f:DynamicPageTitle>
 				</f:title>
@@ -88,7 +80,7 @@ xmlns:f="sap.f">
 						items="{
 							path: '/movie/Inspiring',
 							sorter: { path: 'Rating' }
-						}">
+						}" id="iSelect">
 							<core:ListItem key="{Name}" text="{Name}" additionalText = "{Rating}"/>
 						</ComboBox>	
 						<Label text="Select the Movie" visible="{/visible/Comedy}" />
@@ -97,7 +89,7 @@ xmlns:f="sap.f">
 						items="{
 							path: '/movie/Comedy',
 							sorter: { path: 'Rating' }
-						}">
+						}" id="cSelect">
 							<core:ListItem key="{Name}" text="{Name}" additionalText = "{Rating}"/>
 						</ComboBox>	
 						<Label text="Select the Movie" visible="{/visible/Horror}" />
@@ -106,7 +98,7 @@ xmlns:f="sap.f">
 						items="{
 							path: '/movie/Horror',
 							sorter: { path: 'Rating' }
-						}">
+						}" ids="hSelect">
 							<core:ListItem key="{Name}" text="{Name}" additionalText = "{Rating}"/>
 						</ComboBox>	
 

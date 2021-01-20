@@ -1,16 +1,16 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
-	"sap/ui/core/Fragment",
-	"sap/ui/model/Filter",
-  "sap/ui/model/FilterOperator",
-  "sap/ui/core/syncStyleClass",
-  "sap/m/MessageToast",
-  "sap/m/Dialog",
-	"sap/m/DialogType",
-	"sap/m/Button",
-	"sap/m/ButtonType",
-	"sap/m/Text"
+    "sap/ui/core/Fragment",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator",
+    "sap/ui/core/syncStyleClass",
+    "sap/m/MessageToast",
+    "sap/m/Dialog",
+    "sap/m/DialogType",
+    "sap/m/Button",
+    "sap/m/ButtonType",
+    "sap/m/Text"
   ], function(Controller, JSONModel, Fragment, Filter, FilterOperator, syncStyleClass, MessageToast, Dialog, DialogType, Button, ButtonType, Text) {
     "use strict";
   
@@ -21,7 +21,6 @@ sap.ui.define([
       },
       
       _onSelectionChange: function (oEvent) {
-        debugger;
         var selKey = oEvent.getParameter("selectedItem").getKey();
   
         var oModel = this.getOwnerComponent().getModel();
@@ -48,14 +47,31 @@ sap.ui.define([
         }
         this.getView().setModel(oModel);
       },
-      onGoPress: function () {
+      onGoPress: function (oEvent) {
+        debugger;
         sap.ui.core.BusyIndicator.show();
         setTimeout(function () {
           sap.ui.core.BusyIndicator.hide();
-        }, 3000);
+        }, 2000);
+
         
+        var oModel = this.getOwnerComponent().getModel();
+        if (oModel.getProperty("/visible/Inspiring") === true) {
+          var selectedM = this.getView().byId("iSelect").getSelectedKey();
+        } else if (oModel.getProperty("/visible/Comedy") === true) {
+          var selectedM = this.getView().byId("cSelect").getSelectedKey();
+        } else if (oModel.getProperty("/visible/Horror") === true) {
+          var selectedM = this.getView().byId("hSelect").getSelectedKey();
+        }
+        // var oHeader = this.getOwnerComponent().getModel().getProperty("/movieName");
+          var route = sap.ui.core.UIComponent.getRouterFor(this);
+          // var sMovie = oEvent.getSource().getText();
+    
+          route.navTo("MV_Detail", {
+            movieName: selectedM
+          });
       },
-      onDefaultMessageDialogPress: function () {
+      onInfoPress: function () {
         if (!this.oDefaultMessageDialog) {
           this.oDefaultMessageDialog = new Dialog({
             type: DialogType.Message,

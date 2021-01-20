@@ -1,18 +1,4 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-	<SelectDialog
-		noDataText="No Movie Name Found"
-		id="selectDialog"
-		title="Horror Movies"
-		items="{path: '/movie/Horror'}"
-		search="onValueHelpSearch"
-		confirm="onHorrClose"
-		cancel="onHorrClose"
-		valueHelpRequest="onHorrRequest">
-		<StandardListItem
-			title="{Name}"
-			description="{Rating}"
-			icon="sap-icon://video"
-			type="Active">
-		</StandardListItem>
-	</SelectDialog>
+ <html:iframe width="760" height="215" src="{/movieName/POH/videoUrl}" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
 </core:FragmentDefinition>

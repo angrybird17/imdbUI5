@@ -19,7 +19,7 @@
     "movie": {
         "Inspiring": [
             {
-                "Name": "Pirsuit of Happiness",
+                "Name": "The Pirsuit of Happiness",
                 "Rating": "8.0"
             },
             {
@@ -60,6 +60,21 @@
             }
         ]
     },
+    "movieName": [
+        {
+            "name": "The Pirsuit of Happiness",
+            "imgUrl": "https://images-na.ssl-images-amazon.com/images/S/sgp-catalog-images/region_US/sphe-pursuit_of_happyness_2006-Full-Image_GalleryCover-en-US-1484001256987._UY500_UX667_RI_VLlDKyg2xplhPOpi73ReetPsQLmrUs3aG_TTW_.jpg",
+            "videoUrl": "https://www.youtube.com/embed/DMOBlEcRuw8",
+            "cast": [
+                {
+                    "actor": "Will Smith  as  Chris Gardner"
+                },
+                {
+                    "actor": "Jaden Smith  as  Christopher"
+                }
+            ]
+        }
+    ],
     "visible": {
         "Inspiring": true,
         "Comedy": false,
