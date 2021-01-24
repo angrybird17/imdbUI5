@@ -19,62 +19,56 @@
     "movie": {
         "Inspiring": [
             {
+                "id": "POH",
                 "Name": "The Pirsuit of Happiness",
                 "Rating": "8.0"
             },
             {
+                "id": "MA",
                 "Name": "Mahanati",
                 "Rating": "8.5"
             },
             {
+                "id": "SP",
                 "Name": "Soorarai Pottru",
                 "Rating": "8.7"
             }
         ],
         "Comedy": [
             {
+                "id": "PJ",
                 "Name": "Pilla Zamindaar",
                 "Rating": "7.7"
             },
             {
+                "id": "W",
                 "Name": "Welcome",
                 "Rating": "6.9"
             },
             {
+                "id": "CP",
                 "Name": "Chennai Express",
                 "Rating": "6.0"
             }
         ],
         "Horror": [
             {
+                "id": "BH",
                 "Name": "Bhagamathie",
                 "Rating": "7.0"
             },
             {
+                "id": "TC",
                 "Name": "The Conjuring",
                 "Rating": "7.5"
             },
             {
+                "id": "P",
                 "Name": "Pari",
                 "Rating": "6.6"
             }
         ]
     },
-    "movieName": [
-        {
-            "name": "The Pirsuit of Happiness",
-            "imgUrl": "https://images-na.ssl-images-amazon.com/images/S/sgp-catalog-images/region_US/sphe-pursuit_of_happyness_2006-Full-Image_GalleryCover-en-US-1484001256987._UY500_UX667_RI_VLlDKyg2xplhPOpi73ReetPsQLmrUs3aG_TTW_.jpg",
-            "videoUrl": "https://www.youtube.com/embed/DMOBlEcRuw8",
-            "cast": [
-                {
-                    "actor": "Will Smith  as  Chris Gardner"
-                },
-                {
-                    "actor": "Jaden Smith  as  Christopher"
-                }
-            ]
-        }
-    ],
     "visible": {
         "Inspiring": true,
         "Comedy": false,

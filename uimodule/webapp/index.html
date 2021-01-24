@@ -4,8 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/resources/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+  <!-- <link href="/resources/img/favicon.ico" rel="shortcut icon" type="image/x-icon" /> -->
+  <title>IMDb: Ratings, Reviews, and Where to Watch the Best Movies & TV Shows</title>
+  <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/3000px-IMDB_Logo_2016.svg.png" type="image/x-icon">
 
   <title>myUI5App</title>
 
@@ -15,12 +16,23 @@
       }' data-sap-ui-oninit="module:sap/ui/core/ComponentSupport" data-sap-ui-compatVersion="edge"
     data-sap-ui-async="true" data-sap-ui-frameOptions="trusted">
     </script>
+    <script type="text/javascript" src="./resources/js/vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector("#tilt"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2
+        });
+    </script>
 </head>
 
 <body class="sapUiBody">
   <div data-sap-ui-component data-name="com.myorg.myUI5App" data-id="container"
     data-settings='{"id" : "myUI5App"}'>
   </div>
+
+  
 </body>
 
 </html>

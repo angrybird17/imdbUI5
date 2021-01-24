@@ -81,7 +81,7 @@ xmlns:f="sap.f">
 							path: '/movie/Inspiring',
 							sorter: { path: 'Rating' }
 						}" id="iSelect">
-							<core:ListItem key="{Name}" text="{Name}" additionalText = "{Rating}"/>
+							<core:ListItem key="{id}" text="{Name}" additionalText = "{Rating}"/>
 						</ComboBox>	
 						<Label text="Select the Movie" visible="{/visible/Comedy}" />
 						<ComboBox visible="{/visible/Comedy}" placeholder="Movie with Rating"
@@ -90,7 +90,7 @@ xmlns:f="sap.f">
 							path: '/movie/Comedy',
 							sorter: { path: 'Rating' }
 						}" id="cSelect">
-							<core:ListItem key="{Name}" text="{Name}" additionalText = "{Rating}"/>
+							<core:ListItem key="{id}" text="{Name}" additionalText = "{Rating}"/>
 						</ComboBox>	
 						<Label text="Select the Movie" visible="{/visible/Horror}" />
 						<ComboBox visible="{/visible/Horror}" placeholder="Movie with Rating"
@@ -98,8 +98,8 @@ xmlns:f="sap.f">
 						items="{
 							path: '/movie/Horror',
 							sorter: { path: 'Rating' }
-						}" ids="hSelect">
-							<core:ListItem key="{Name}" text="{Name}" additionalText = "{Rating}"/>
+						}" id="hSelect">
+							<core:ListItem key="{id}" text="{Name}" additionalText = "{Rating}"/>
 						</ComboBox>	
 
 					</VBox>

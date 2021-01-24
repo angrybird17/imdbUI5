@@ -3,7 +3,7 @@
 		<pages>
 			<Page title="{i18n>title}">
 				<content>
-					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="IMDB" 
+					<GenericTile id="tilt" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="IMDB" 
           subheader="Movie Application" press="tilePress" url="form" >
 						<TileContent>
 							<ImageContent src="resources/img/profile.jpeg" />

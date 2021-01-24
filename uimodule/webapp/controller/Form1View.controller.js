@@ -21,6 +21,7 @@ sap.ui.define([
       },
       
       _onSelectionChange: function (oEvent) {
+        debugger;
         var selKey = oEvent.getParameter("selectedItem").getKey();
   
         var oModel = this.getOwnerComponent().getModel();

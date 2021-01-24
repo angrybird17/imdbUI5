@@ -21,8 +21,8 @@ xmlns:f="sap.f" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:form="sap.ui.lay
 				<f:header height="1000px">
 					<f:DynamicPageHeader height="1000px">
 						<HBox class="vbox1" fitContainer="true" justifyContent="Center">
-							<Image id="img" src="{/movieName/imgUrl}"
-										height="150px" width="400px"/>
+							<Image id="img" src="{/imgUrl}"
+										height="250px" width="400px"/>
 						</HBox>
                         
 
@@ -40,7 +40,7 @@ xmlns:f="sap.f" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:form="sap.ui.lay
 				text="TRAILER"
 				>
                 <HBox justifyContent="Center">
-                   <html:iframe width="460" height="215" src="https://www.youtube.com/embed/DMOBlEcRuw8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                   <html:iframe id="video" width="460" height="215" src="https://www.youtube.com/embed/DMOBlEcRuw8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
 				   </html:iframe>
                 </HBox>
                 </IconTabFilter>
@@ -50,9 +50,9 @@ xmlns:f="sap.f" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:form="sap.ui.lay
 				design="Horizontal"
 				text="FULL CAST AND CREW "
 				>
-                <SelectList
+                <SelectList id="list"
 					items="{
-						path: '/movieName/cast',
+						path: '/cast',
 						sorter: { path: 'actor' }
 					}">
 					<core:Item key="{actor}" text="{actor}" />
