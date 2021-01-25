@@ -34,23 +34,6 @@
                 "Rating": "8.7"
             }
         ],
-        "Comedy": [
-            {
-                "id": "PJ",
-                "Name": "Pilla Zamindaar",
-                "Rating": "7.7"
-            },
-            {
-                "id": "W",
-                "Name": "Welcome",
-                "Rating": "6.9"
-            },
-            {
-                "id": "CP",
-                "Name": "Chennai Express",
-                "Rating": "6.0"
-            }
-        ],
         "Horror": [
             {
                 "id": "BH",
@@ -66,6 +49,23 @@
                 "id": "P",
                 "Name": "Pari",
                 "Rating": "6.6"
+            }
+        ],
+        "Comedy": [
+            {
+                "id": "PJ",
+                "Name": "Pilla Zamindaar",
+                "Rating": "7.7"
+            },
+            {
+                "id": "HR",
+                "Name": "Hera Pheri",
+                "Rating": "6.0"
+            },
+            {
+                "id": "CP",
+                "Name": "Chennai Express",
+                "Rating": "6.0"
             }
         ]
     },

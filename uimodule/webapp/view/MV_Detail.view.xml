@@ -34,17 +34,7 @@ xmlns:f="sap.f" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:form="sap.ui.lay
 		select=".onFilterSelect"
 		class="sapUiResponsiveContentPadding">
 		<items>
-                    <IconTabFilter
-				icon="sap-icon://video"
-				design="Horizontal"
-				text="TRAILER"
-				>
-                <HBox justifyContent="Center">
-                   <html:iframe id="video" width="460" height="215" src="https://www.youtube.com/embed/DMOBlEcRuw8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-				   </html:iframe>
-                </HBox>
-                </IconTabFilter>
-			<IconTabSeparator icon="sap-icon://resize-corner" />
+                    
 			<IconTabFilter
 				icon="sap-icon://company-view"
 				design="Horizontal"
@@ -60,11 +50,23 @@ xmlns:f="sap.f" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:form="sap.ui.lay
                 </IconTabFilter>
             <IconTabSeparator icon="sap-icon://resize-corner" />
 			<IconTabFilter
+				icon="sap-icon://video"
+				design="Horizontal"
+				text="TRAILER"
+				>
+                <HBox justifyContent="Center">
+                   <html:iframe id="video" width="460" height="215" src="https://www.youtube.com/embed/DMOBlEcRuw8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+				   </html:iframe>
+                </HBox>
+                </IconTabFilter>
+			<IconTabSeparator icon="sap-icon://resize-corner" />
+
+			<IconTabFilter
 				icon="sap-icon://request"
 				design="Horizontal"
 				text="REVIEW"
 				>
-                <form:SimpleForm editable="true">
+                <!-- <form:SimpleForm editable="true">
 		<Label text="Give your Review"/>
 		<TextArea id="TypeHere"
             placeholder="Type here..."
@@ -73,16 +75,19 @@ xmlns:f="sap.f" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:form="sap.ui.lay
 			liveChange="handleLiveChange"
 		/>
 		
-	</form:SimpleForm>
-    <Label text="User Reviews: "/>
-    <MessageStrip
-                id="getProperty"
-				text="{/InputValue}"
-				type="Information"
-				showIcon="true"
-				customIcon="sap-icon://notes"
-				class="sapUiMediumMarginBottom">
-			</MessageStrip>
+	</form:SimpleForm> -->
+    <Panel width="auto" class="sapUiResponsiveMargin">
+		<headerToolbar>
+			<OverflowToolbar>
+				<Title text="User Reviews: "/>
+				<ToolbarSpacer />
+			</OverflowToolbar>
+		</headerToolbar>
+		<content>
+			<Text text="Go watch this film if you’re looking for something definitely out of the box and 
+			fresh, this movie will not disappoint you" />
+		</content>
+	</Panel>
         </IconTabFilter>
                 </items>
 	</IconTabBar>

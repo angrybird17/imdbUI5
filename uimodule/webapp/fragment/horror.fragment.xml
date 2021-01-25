@@ -1,4 +1,0 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
- <html:iframe width="760" height="215" src="{/movieName/POH/videoUrl}" 
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
-</core:FragmentDefinition>

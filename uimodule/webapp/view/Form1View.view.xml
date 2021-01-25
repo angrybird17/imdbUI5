@@ -34,6 +34,10 @@ xmlns:f="sap.f">
 								icon="sap-icon://information"
 								press=".onInfoPress"
 								/>
+								<Button
+								icon="sap-icon://sys-back"
+								press="onBackPress"
+								/>
 						</f:actions>
 						
 					</f:DynamicPageTitle>
@@ -66,8 +70,9 @@ xmlns:f="sap.f">
 						<Select id="ComboBox1" change="_onSelectionChange" selectedKey="Inspiring" width="100%">
                             <items>
                                 <core:Item key="Inspiring" text="Inspiring" />
-								<core:Item key="Comedy" text="Comedy" />
 								<core:Item key="Horror" text="Horror" />
+								<core:Item key="Comedy" text="Comedy" />
+
                             </items>
                         </Select>						
 					</VBox>
@@ -82,6 +87,15 @@ xmlns:f="sap.f">
 							sorter: { path: 'Rating' }
 						}" id="iSelect">
 							<core:ListItem key="{id}" text="{Name}" additionalText = "{Rating}"/>
+						</ComboBox>
+						<Label text="Select the Movie" visible="{/visible/Horror}" />
+						<ComboBox visible="{/visible/Horror}" placeholder="Movie with Rating"
+						showSecondaryValues= "true"
+						items="{
+							path: '/movie/Horror',
+							sorter: { path: 'Rating' }
+						}" id="hSelect">
+							<core:ListItem key="{id}" text="{Name}" additionalText = "{Rating}"/>
 						</ComboBox>	
 						<Label text="Select the Movie" visible="{/visible/Comedy}" />
 						<ComboBox visible="{/visible/Comedy}" placeholder="Movie with Rating"
@@ -92,15 +106,7 @@ xmlns:f="sap.f">
 						}" id="cSelect">
 							<core:ListItem key="{id}" text="{Name}" additionalText = "{Rating}"/>
 						</ComboBox>	
-						<Label text="Select the Movie" visible="{/visible/Horror}" />
-						<ComboBox visible="{/visible/Horror}" placeholder="Movie with Rating"
-						showSecondaryValues= "true"
-						items="{
-							path: '/movie/Horror',
-							sorter: { path: 'Rating' }
-						}" id="hSelect">
-							<core:ListItem key="{id}" text="{Name}" additionalText = "{Rating}"/>
-						</ComboBox>	
+							
 
 					</VBox>
 						

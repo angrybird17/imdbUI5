@@ -67,7 +67,27 @@ sap.ui.define([
         // var oHeader = this.getOwnerComponent().getModel().getProperty("/movieName");
           var route = sap.ui.core.UIComponent.getRouterFor(this);
           // var sMovie = oEvent.getSource().getText();
+
+          if (selectedM === "") {
+            this.oDefaultMessageDialog = new Dialog({
+              type: DialogType.Message,
+              title: "Warning",
+              icon: "sap-icon://message-warning",
+              content: new Text({ text: "Please select a movie to proceed" }),
+              beginButton: new Button({
+                type: ButtonType.Emphasized,
+                text: "OK",
+                press: function () {
+                  this.oDefaultMessageDialog.close();
+                }.bind(this)
+              })
+            });
+
+          this.oDefaultMessageDialog.open();
+
+          }
     
+
           route.navTo("MV_Detail", {
             movieName: selectedM
           });
@@ -89,7 +109,11 @@ sap.ui.define([
         }
   
         this.oDefaultMessageDialog.open();
-      }    
+      },
+      onBackPress: function() {
+        window.history.go(-1);       
+  }
+
     });
   });
   

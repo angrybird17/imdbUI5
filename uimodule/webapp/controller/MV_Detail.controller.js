@@ -43,10 +43,61 @@ sap.ui.define([
               "imgUrl": "https://www.25cineframes.com/images/uploads/2018/01/Anushka-Shetty-Bhagmati-Movie-First-Look-ULTRA-HD-Posters-WallPapers.jpg",
               "cast": [
                   {
-                      "actor": "Anushka Shetty	as  Bhaagamathie / Chanchala"
+                      "actor": "Anushka Shetty	 as   Bhaagamathie / Chanchala"
                   },
                   {
-                      "actor": "Asha Sharath	as 	Vyshnavi Natarajan"
+                      "actor": "Asha Sharath	 as  	Vyshnavi Natarajan"
+                  }
+              ]
+          },
+          "MA": {
+              "movieName": "Mahanati",
+              "imgUrl": "https://images.indianexpress.com/2018/05/savitri-759.jpg",
+              "cast": [
+                  {
+                      "actor": "Keerthy Suresh	as 	Savitri Garu"
+                  },
+                  {
+                      "actor": "Dulquer Salmaan	 as 	Gemini Ganesan"
+                  }
+              ]
+          },
+          "SP": {
+              "movieName": "Soorarai Pottru",
+              "imgUrl": "https://varnam.my/wp-content/uploads/2020/08/org_57199202002041228-1.jpg",
+              "cast": [
+                  {
+                      "actor": "Suriya	as 	Nedumaaran Rajangam"
+                  },
+                  {
+                      "actor": "Aparna Balamurali	 as 	Sundari"
+                  }
+              ]
+          },
+          "TC": {
+              "movieName": "The Conjuring",
+              "imgUrl": "https://wallpapercave.com/wp/wp1851118.jpg",
+              "cast": [
+                  {
+                      "actor": "Vera Farmiga	as	Lorraine Warren"
+                  },
+                  {
+                      "actor": "Patrick Wilson	as	Ed Warren"
+                  },
+                  {
+                      "actor": "Lili Taylor	 as 	Carolyn Perron"
+                  }
+              ]
+          },
+          "P": {
+              "movieName": "Pari",
+              "imgUrl": "https://i.pinimg.com/originals/09/0d/02/090d026a141cc980414463c4a7ea1b2c.jpg",
+              "cast": [
+                  {
+                      "actor": "Anushka Sharma	 as 	Rukhsana"
+                  },
+                  {
+                      "actor": "Parambrata Chattopadhyay	 as 	Arnab"
                   }
               ]
           }
@@ -54,9 +105,6 @@ sap.ui.define([
         var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
         oRouter.getRoute("MV_Detail").attachMatched(this._onRouteMatched, this);
         
-        
-      // var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			// oRouter.getRoute("MV_Detail").attachPatternMatched(this._onObjectMatched, this)
       },
       _onRouteMatched: function (oEvent) {
           debugger;
@@ -68,45 +116,21 @@ sap.ui.define([
             path : "/" + oArgs.movieName
           });
 
-          // var aFilter = [];
-          // var oList = this.getView().byId("list");
-          // var oBinding = oList.getBinding("items");
-
-          // if (oArgs.movieName) {
-          //   aFilter.push(new Filter("", FilterOperator.contains, oArgs.movieName));
-          // }
-          // oBinding.filter(aFilter);
-          
-          // var oData1 = oData.filter(oValue => {
-          //   // TODO: Wildcard search vessel code or vessel name
-          //   if (oValue.movieName.includes(oArgs.movieName)) {
-          //     return true;
-          //   }
-          // });
-
           for (var key in oData) {
             if (oData.hasOwnProperty(key)) {
-              // var val = obj[key];
-              // console.log(key);
               if (oArgs.movieName === key) {
                 var oModel = new JSONModel(oData[key]);
 
                 this.getView().setModel(oModel);
                 this.getView().byId("video").setAttribute(src, oData[key].videoUrl, true);
-                // this.getView().byId("video").setSrc()
               }
             }
           }
-          
-
-          // set explored app's demo model on this sample
-			 
 
           console.log(oEvent.getParameter("config").pattern);
       },
       
       _onBindingChange : function (oEvent) {
-        // No data for the binding
         if (!this.getView().getBindingContext()) {
           this.getRouter().getTargets().display("notFound");
         }
