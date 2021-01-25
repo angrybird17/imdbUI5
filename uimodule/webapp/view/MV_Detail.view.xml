@@ -42,8 +42,7 @@ xmlns:f="sap.f" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:form="sap.ui.lay
 				>
                 <SelectList id="list"
 					items="{
-						path: '/cast',
-						sorter: { path: 'actor' }
+						path: '/cast'
 					}">
 					<core:Item key="{actor}" text="{actor}" />
 				</SelectList>

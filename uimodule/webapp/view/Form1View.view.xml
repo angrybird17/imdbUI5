@@ -31,10 +31,12 @@ xmlns:f="sap.f">
 						</f:heading>
 						<f:actions>
 							<Button
+								type="Transparent"
 								icon="sap-icon://information"
 								press=".onInfoPress"
 								/>
 								<Button
+								type="Transparent"
 								icon="sap-icon://sys-back"
 								press="onBackPress"
 								/>

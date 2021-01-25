@@ -50,12 +50,6 @@ sap.ui.define([
       },
       onGoPress: function (oEvent) {
         debugger;
-        sap.ui.core.BusyIndicator.show();
-        setTimeout(function () {
-          sap.ui.core.BusyIndicator.hide();
-        }, 2000);
-
-        
         var oModel = this.getOwnerComponent().getModel();
         if (oModel.getProperty("/visible/Inspiring") === true) {
           var selectedM = this.getView().byId("iSelect").getSelectedKey();
@@ -85,6 +79,11 @@ sap.ui.define([
 
           this.oDefaultMessageDialog.open();
 
+          } else {
+            sap.ui.core.BusyIndicator.show();
+        setTimeout(function () {
+          sap.ui.core.BusyIndicator.hide();
+        }, 2000);
           }
     
 
