@@ -4,10 +4,15 @@ sap.ui.define([
   "use strict";
 
   return Controller.extend("com.myorg.myUI5App.controller.MainView", {
-    tilePress: function() {
+      imdbPress: function() {
       var route = sap.ui.core.UIComponent.getRouterFor(this);
 
       route.navTo("Form1_View");
+    },
+    demoPress: function() {
+      var route = sap.ui.core.UIComponent.getRouterFor(this);
+
+      route.navTo("Table_View");
     }
   });
 });

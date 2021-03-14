@@ -1,0 +1,109 @@
+<mvc:View
+	controllerName="com.myorg.myUI5App.controller.Table"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+	xmlns:t="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:core="sap.ui.core"
+    height="100%">
+	<Page
+		showHeader="true"
+		enableScrolling="true"
+		class="sapUiContentPadding">
+		<content>
+
+        <IconTabBar
+		id="idIconTabBarNoIcons"
+		expanded="true"
+		class="sapUiResponsiveContentPadding">
+		<items>
+			<IconTabFilter text="DOC_LIST" key="doclist">
+				<t:Table
+				rows="{/table}"
+				selectionMode="MultiToggle"
+				visibleRowCount="7"
+				paste="onPaste"
+				ariaLabelledBy="title">
+				<t:extension>
+					<OverflowToolbar style="Clear">
+						<Title id="title" text="DOC_LIST Table"/>
+					</OverflowToolbar>
+				</t:extension>
+				<t:columns>
+					<t:Column width="11rem">
+						<Label text="Job ID" />
+						<t:template>
+							<Text text="{JobId}" wrapping="false" />
+						</t:template>
+					</t:Column>
+					<t:Column width="11rem">
+						<Label text="File Name" />
+						<t:template>
+							<Text text="{FileName}" wrapping="false" />
+						</t:template>
+					</t:Column>
+					<t:Column width="11rem">
+						<Label text="Document Type" />
+						<t:template>
+							<Text text="{DocumentType}" wrapping="false" />
+						</t:template>
+					</t:Column>
+					<t:Column width="11rem">
+						<Label text="Created on" />
+						<t:template>
+							<Text text="{CreateOn}" wrapping="false" />
+						</t:template>
+					</t:Column>
+					<t:Column width="11rem">
+						<Label text="Status" />
+						<t:template>
+							<Text text="{Status}" wrapping="false" />
+						</t:template>
+					</t:Column>
+					<t:Column width="11rem">
+						<Label text="Finished On" />
+						<t:template>
+							<Text text="{FinishedOn}" wrapping="false" />
+						</t:template>
+					</t:Column>
+					<t:Column width="11rem">
+						<Label text="Client ID" />
+						<t:template>
+							<Text text="{ClientId}" wrapping="false" />
+						</t:template>
+					</t:Column>
+					<t:Column width="11rem">
+						<Label text="Sender" />
+						<t:template>
+							<Text text="{Sender}" wrapping="false" />
+						</t:template>
+					</t:Column>
+					<t:Column width="11rem">
+						<Label text="Flag" />
+						<t:template>
+							<Text text="{Flag}" wrapping="false" />
+						</t:template>
+					</t:Column>
+					
+				</t:columns>
+			</t:Table>
+			</IconTabFilter>
+            
+			<IconTabFilter text="DOC_EXTRACT" key="docextract">
+				<Text text="Info content goes here ..." />
+			</IconTabFilter>
+			
+		</items>
+	</IconTabBar>
+			
+		</content>
+        <footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button text="Edit/Mantain" type="Accept" press="onEditPress" ariaHasPopup="Dialog"/>
+				<Button text="Sync/Save All" type="Accept" />
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

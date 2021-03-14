@@ -4,9 +4,15 @@
 			<Page title="{i18n>title}">
 				<content>
 					<GenericTile id="tilt" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="IMDB" 
-          subheader="Movie Application" press="tilePress" url="form" >
+          subheader="Movie Application" press="imdbPress" url="form" >
 						<TileContent>
 							<ImageContent src="resources/img/profile.jpeg" />
+						</TileContent>
+					</GenericTile>
+					<GenericTile id="tilt1" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Demo" 
+          subheader="Demo Application" press="demoPress" url="table" >
+						<TileContent>
+							<ImageContent src="sap-icon://provision" />
 						</TileContent>
 					</GenericTile>
               	

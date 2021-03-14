@@ -26,6 +26,22 @@ sap.ui.define([
                   }
               ]
           },
+          "LN": {
+              "movieName": "Lagaan",
+              "imgUrl": "https://m.media-amazon.com/images/M/MV5BODA5OGJiZDUtZjcwYi00YjA2LWIwYTYtMzFlNTc1NWYyMmVkXkEyXkFqcGdeQXVyNDAzNDk0MTQ@._V1_.jpg",
+              "videoUrl": "https://www.youtube.com/embed/rZPbpymefuE",
+              "cast": [
+                  {
+                      "actor": "Aamir Khan	 as	  Bhuvanr"
+                  },
+                  {
+                      "actor": "Gracy Singh	 as	 Gauri"
+                  },
+                  {
+                      "actor": "Rachel Shelley	 as	 Elizabeth Russell"
+                  }
+              ]
+          },
           "PJ": {
               "movieName": "Pilla Zamindar",
               "imgUrl": "resources/img/pj.png",
@@ -103,7 +119,7 @@ sap.ui.define([
           }
         };
         var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-        oRouter.getRoute("MV_Detail").attachMatched(this._onRouteMatched, this);
+        oRouter.getRoute("MV_Detail").attachMatched(this._onRouteMatched, this);        
         
       },
       _onRouteMatched: function (oEvent) {
@@ -122,7 +138,15 @@ sap.ui.define([
                 var oModel = new JSONModel(oData[key]);
 
                 this.getView().setModel(oModel);
-                this.getView().byId("video").setAttribute(src, oData[key].videoUrl, true);
+                // var oImg = this.getView().byId("img");
+                // var oFrame = this.getView().byId("video");
+                // var oFrameContent = oFrame.$()[0];
+                // console.log('oImg ', oImg);
+                // oFrame.setAttribute('src', oData[key].videoUrl, true);
+
+                var divId = this.createId("video"); // this == controller instance
+                console.log('divId ' + divId);
+                document.getElementById(divId).setAttribute('src', oData[key].videoUrl, true);
               }
             }
           }

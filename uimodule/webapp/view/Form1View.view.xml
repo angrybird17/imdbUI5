@@ -51,7 +51,7 @@ xmlns:f="sap.f">
 								<pages>
 									<Image src="https://i.pinimg.com/originals/31/ca/f2/31caf2fa888d01cd7658ed5d41a5798a.jpg" height="250px" width="600px"/>
 									<Image
-										src="https://www.filmibeat.com/ph-big/2019/08/miss-india_156690381710.jpg"
+										src="https://www.upcomingmoviesdate.com/wp-content/uploads/2020/04/maxresdefault-4.jpg"
 										height="250px" width="600px"/>
 									<Image src="https://images-na.ssl-images-amazon.com/images/S/sgp-catalog-images/region_US/sphe-pursuit_of_happyness_2006-Full-Image_GalleryCover-en-US-1484001256987._UY500_UX667_RI_VLlDKyg2xplhPOpi73ReetPsQLmrUs3aG_TTW_.jpg"
 										height="250px" width="600px"/>
@@ -94,8 +94,7 @@ xmlns:f="sap.f">
 						<ComboBox visible="{/visible/Horror}" placeholder="Movie with Rating"
 						showSecondaryValues= "true"
 						items="{
-							path: '/movie/Horror',
-							sorter: { path: 'Rating' }
+							path: '/movie/Horror'
 						}" id="hSelect">
 							<core:ListItem key="{id}" text="{Name}" additionalText = "{Rating}"/>
 						</ComboBox>	
@@ -103,9 +102,7 @@ xmlns:f="sap.f">
 						<ComboBox visible="{/visible/Comedy}" placeholder="Movie with Rating"
 						showSecondaryValues= "true"
 						items="{
-							path: '/movie/Comedy',
-							sorter: { path: 'Rating' }
-						}" id="cSelect">
+							path: '/movie/Comedy'}" id="cSelect">
 							<core:ListItem key="{id}" text="{Name}" additionalText = "{Rating}"/>
 						</ComboBox>	
 							
@@ -114,9 +111,33 @@ xmlns:f="sap.f">
 						
 					</HBox>
 					<HBox id="hbox2" fitContainer="true" justifyContent="Center">
-                    	<Button text="Go" type="Emphasized" press="onGoPress"/>
+                    	<Button text="" icon="sap-icon://search" type="Emphasized" press="onGoPress"/>
                 	</HBox>
 				</VBox>
+
+				<!-- <Table id="list" items="{path: '/movie1'}" visible="true" >
+				<headerToolbar>
+					<Toolbar>
+						<Title id="titleTable" text="movies"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="nameColumn">
+						<Text text="Name" />
+					</Column>
+					<Column>
+						<Text text="Rating" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+					<cells>
+						<Text text="{name}"/>
+						<Text text="{rating}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table> -->
 				</f:content>
 			</f:DynamicPage>
 

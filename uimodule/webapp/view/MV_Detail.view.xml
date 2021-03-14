@@ -2,7 +2,7 @@
 xmlns:f="sap.f" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:form="sap.ui.layout.form">
 	<App id="idAppControl">
 		<pages>
-                    <f:DynamicPage id="DynamicPage">
+                    <f:DynamicPage id="DynamicPage" showFooter="true">
 				<f:title>
 					<f:DynamicPageTitle fitContent="true">
 						<f:heading>
@@ -91,6 +91,13 @@ xmlns:f="sap.f" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:form="sap.ui.lay
                 </items>
 	</IconTabBar>
 				</f:content>
+				<!-- <f:footer>
+				<HBox justifyContent="Center">
+				<VBox>
+				<Text text="© 2021-2025 by MyDemoApp.com, Inc."/>
+				</VBox>
+				</HBox>
+				</f:footer> -->
 			</f:DynamicPage>
 
 				<!-- </content> -->

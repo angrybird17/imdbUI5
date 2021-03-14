@@ -118,3 +118,35 @@ onInspRequest: function (oEvent) {
 
 
       ------- form1 controller --------------------------------------------------------------
+
+
+      --- input list item -----------
+      onEditPress: function (oEvent) {
+        // debugger;
+
+        if (!this.oDefaultDialog) {
+				this.oDefaultDialog = new Dialog({
+					title: "Available Products",
+					content: new List({
+						items: {
+							path: "/table",
+							template: new InputListItem({
+                label: "JobID"
+								value: "{JobId}"
+							})
+						}
+					}),
+					beginButton: new Button({
+						type: ButtonType.Emphasized,
+						text: "OK",
+						press: function () {
+							this.oDefaultDialog.close();
+						}.bind(this)
+					}),
+					endButton: new Button({
+						text: "Close",
+						press: function () {
+							this.oDefaultDialog.close();
+						}.bind(this)
+					})
+				});

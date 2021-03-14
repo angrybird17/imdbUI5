@@ -24,6 +24,11 @@
                 "Rating": "8.0"
             },
             {
+                "id": "LN",
+                "Name": "Lagaan",
+                "Rating": "8.1"
+            },
+            {
                 "id": "MA",
                 "Name": "Mahanati",
                 "Rating": "8.5"
@@ -73,5 +78,61 @@
         "Inspiring": true,
         "Comedy": false,
         "Horror": false
-    }
+    },
+    "movie1": [
+        {
+            "name": "Anjaan",
+            "rating": "7.5"
+        },
+        {
+            "name": "Madaari",
+            "rating": "9.0"
+        }
+    ],
+    "table": [
+        {
+            "JobId": "JB001",
+            "FileName": "sample.pdf",
+            "DocumentType": "Invoice",
+            "CreatedOn": "2020:03:12",
+            "Status": "Ready",
+            "FinishedOn": "2020:03:12",
+            "ClientId": "default",
+            "Sender": "user@abc.com",
+            "Flag": "X"
+        },
+        {
+            "JobId": "JB002",
+            "FileName": "sample.pdf",
+            "DocumentType": "Invoice",
+            "CreatedOn": "2020:03:12",
+            "Status": "Ready",
+            "FinishedOn": "2020:03:12",
+            "ClientId": "default",
+            "Sender": "user@abc.com",
+            "Flag": "X"
+        },
+        {
+            "JobId": "JB003",
+            "FileName": "sample.pdf",
+            "DocumentType": "Invoice",
+            "CreatedOn": "2020:03:12",
+            "Status": "Ready",
+            "FinishedOn": "2020:03:12",
+            "ClientId": "default",
+            "Sender": "user@abc.com",
+            "Flag": "X"
+        },
+        {
+            "JobId": "JB004",
+            "FileName": "sample.pdf",
+            "DocumentType": "Invoice",
+            "CreatedOn": "2020:03:12",
+            "Status": "Ready",
+            "FinishedOn": "2020:03:12",
+            "ClientId": "default",
+            "Sender": "user@abc.com",
+            "Flag": "X"
+        }
+    ]
 }
