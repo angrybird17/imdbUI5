@@ -111,7 +111,7 @@ sap.ui.define([
       },
       onBackPress: function() {
         window.history.go(-1);       
-  }
+      }
 
     });
   });

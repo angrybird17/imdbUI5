@@ -20,8 +20,9 @@
 		<items>
 			<IconTabFilter text="DOC_LIST" key="doclist">
 				<t:Table
+				id="table"
 				rows="{/table}"
-				selectionMode="MultiToggle"
+				selectionMode="Single"
 				visibleRowCount="7"
 				paste="onPaste"
 				ariaLabelledBy="title">
