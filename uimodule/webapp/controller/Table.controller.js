@@ -27,7 +27,7 @@ sap.ui.define([
       MessageToast.show("Pasted Data: " + aData);
     },
     onEditPress: function (oEvent) {
-      // debugger;
+      debugger;
       var oButton = oEvent.getSource(),
         oView = this.getView();
 
@@ -47,7 +47,12 @@ sap.ui.define([
         oDialog.open();
       }.bind(this));
 
-      var getJobID = this.getView().byId('table').getSelectedItem()
+      var getJobID = this.getView().byId('table').getSelectedItem();
+      getJobID.mAggregations.cells[0].mProperties.text;
+
+console.log(this.getView().byId('jobId'));
+
+
 
 
       // if (!this.oDefaultMessageDialog) {
