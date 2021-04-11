@@ -48,10 +48,8 @@ sap.ui.define([
       }.bind(this));
 
       var getJobID = this.getView().byId('table').getSelectedItem();
-      getJobID.mAggregations.cells[0].mProperties.text;
-
-console.log(this.getView().byId('jobId'));
-
+      var getJobValue = getJobID.mAggregations.cells[0].mProperties.text;
+      this.getView().byId('jobId').setText(getJobValue);
 
 
 
@@ -83,6 +81,34 @@ console.log(this.getView().byId('jobId'));
 
 
       // this.byId("insInput").setValue(oSelectedItem.getTitle());
+    },
+    onSave: function (oEvent) {
+      debugger;
+      var listData = this.getView().byId('list').getItems();
+      console.log(listData);
+      var listItem = {
+        FileName: '',
+        DocumentType: '',
+        CreatedOn: '',
+        Status: '',
+        FinishedOn: '',
+        ClientId: '',
+        Sender: '',
+        Flag: ''
+      }
+
+      listData.map((item, index) => {
+        console.log(index);
+        listItem[item.mAggregations.content[0].mProperties.placeholder] = item.mAggregations.content[0].mProperties.value
+      });
+      console.log(listItem);
+
+      var tableData = this.getView().byId('table').getColumns();
+      this.getView().byId('table').getColumns()[1].mAggregations.header.mProperties.text
+      listItem.map((item, index) => {
+        console.log(index);
+        tableData[index].mAggregations.header.mProperties.text = item
+      });
     }
 
   });

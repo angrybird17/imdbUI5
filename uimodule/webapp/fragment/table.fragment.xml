@@ -1,23 +1,25 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
 	<Dialog id="tableDialog" title="Enter the details" close="onDialogClose">
 			<!-- <List headerText="Input"> -->
-        <List>
+        <List id="list">
 		<InputListItem>
 			<ObjectStatus id="jobId" title="JobId" text="JB001" class="sapUiTinyMargin"/>
 		</InputListItem>
 		<InputListItem>
 			<Input
-                placeholder="File Name"
+				id="fileName"
+                placeholder="FileName"
 				type="text" />
 		</InputListItem>
 		<InputListItem>
 			<Input
-                placeholder="Document Type"
+				id="docType"
+                placeholder="DocumentType"
 				type="text" />
 		</InputListItem>
 		<InputListItem>
 			<Input
-                placeholder="Created On"
+                placeholder="CreatedOn"
 				type="text" />
 		</InputListItem>
 		<InputListItem>
@@ -27,12 +29,12 @@
 		</InputListItem>
 		<InputListItem>
 			<Input
-                placeholder="Finished On"
+                placeholder="FinishedOn"
 				type="text" />
 		</InputListItem>
 		<InputListItem>
 			<Input
-                placeholder="Client Id"
+                placeholder="ClientId"
 				type="text" />
 		</InputListItem>
 		<InputListItem>
@@ -47,7 +49,7 @@
 		</InputListItem>
 	</List>
     <OverflowToolbar>
-    <Button text="Save" type="Accept" />
+    <Button text="Save" type="Accept" press="onSave"/>
     <ToolbarSpacer/>
     <Button text="Close" press="onDialogClose"/>
     </OverflowToolbar>

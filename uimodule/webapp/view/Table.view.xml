@@ -124,6 +124,18 @@
 			<Column>
 				<Text text="Status" />
 			</Column>
+			<Column>
+				<Text text="FinishedOn" />
+			</Column>
+			<Column>
+				<Text text="ClientId" />
+			</Column>
+			<Column>
+				<Text text="Sender" />
+			</Column>
+			<Column>
+				<Text text="Flag" />
+			</Column>
 		</columns>
 		<items>
 			<ColumnListItem>
@@ -138,6 +150,14 @@
 						text="{CreatedOn}" />
 					<Text
 						text="{Status}" />
+					<Text
+						text="{FinishedOn}" />
+					<Text
+						text="{ClientId}" />
+					<Text
+						text="{Sender}" />
+					<Text
+						text="{Flag}" />
 				</cells>
 			</ColumnListItem>
 		</items>
