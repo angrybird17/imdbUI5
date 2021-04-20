@@ -1,0 +1,11 @@
+var sClientId = this.getView().byId("pClientId").getValue();
+
+var obj = {
+"clientId": sClientId
+}
+
+var oModel = this.getOwnerComponent().getModel("products");
+var sPath = oEvent.getSource().getParent().getBindingContext("products").getPath();
+
+oModel.setProperty(sPath, obj);
+

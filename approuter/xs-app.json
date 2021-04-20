@@ -1,5 +1,5 @@
 {
-  "welcomeFile": "myUI5App/",
+  "welcomeFile": "commyorgmyUI5App/",
   "authenticationMethod": "none",
   "logout": {
     "logoutEndpoint": "/do/logout"

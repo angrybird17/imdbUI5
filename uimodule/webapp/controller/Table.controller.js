@@ -47,36 +47,30 @@ sap.ui.define([
         oDialog.open();
       }.bind(this));
 
-      var getJobID = this.getView().byId('table').getSelectedItem();
-      var getJobValue = getJobID.mAggregations.cells[0].mProperties.text;
-      this.getView().byId('jobId').setText(getJobValue);
+      var oData = this.getOwnerComponent().getModel();
+      console.log('odata', oData);
 
 
 
-      // if (!this.oDefaultMessageDialog) {
-      //   this.oDefaultMessageDialog = new Dialog({
-      //     type: DialogType.Message,
-      //     title: "IMDB Application",
-      //     content: new Text({ text: "A Demo IMDB App built using UI5 for learning purpose." }),
-      //     beginButton: new Button({
-      //       type: ButtonType.Emphasized,
-      //       text: "OK",
-      //       press: function () {
-      //         this.oDefaultMessageDialog.close();
-      //       }.bind(this)
-      //     })
-      //   });
-      // }
+      // var getJobID = this.getView().byId('table').getSelectedItem();
+      // var getJobValue = getJobID.mAggregations.cells[0].mProperties.text;
+      var cells = this.getView().byId('table').getSelectedItem().mAggregations.cells;
+      var data = [];
+       for (var i = 0; i < cells.length; i++){
+        data.push(cells[i].mProperties.text);
 
-      // this.oDefaultMessageDialog.open();
+      }
+
+
+
+      var tablePath = this.getView().byId('table').getSelectedItem().getBindingContextPath();
+      oModel.setProperty(tablePath, data)
+
+
+
     },
     onDialogClose: function (oEvent) {
-      // var oSelectedItem = oEvent.getParameter("selectedItem");
-      // oEvent.getSource().getBinding("items").filter([]);
 
-      // if (!oSelectedItem) {
-      //   return;
-      // }
       this.byId('tableDialog').close();
 
 
@@ -101,14 +95,14 @@ sap.ui.define([
         console.log(index);
         listItem[item.mAggregations.content[0].mProperties.placeholder] = item.mAggregations.content[0].mProperties.value
       });
-      console.log(listItem);
+      console.log(JSON.stringify(listItem));
 
-      var tableData = this.getView().byId('table').getColumns();
-      this.getView().byId('table').getColumns()[1].mAggregations.header.mProperties.text
-      listItem.map((item, index) => {
-        console.log(index);
-        tableData[index].mAggregations.header.mProperties.text = item
-      });
+      // var tableData = this.getView().byId('table').getColumns();
+      // this.getView().byId('table').getColumns()[1].mAggregations.header.mProperties.text
+      // listItem.map((item, index) => {
+      //   console.log(index);
+      //   tableData[index].mAggregations.header.mProperties.text = item
+      // });
     }
 
   });
