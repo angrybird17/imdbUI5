@@ -7,7 +7,7 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel"
   ], function(Controller, jquery, History, Filter, FilterOperator, JSONModel) {
     "use strict";
-    
+
     //Global Definitions
     var oData = {};
     return Controller.extend("com.myorg.myUI5App.controller.MV_Detail", {
@@ -56,7 +56,7 @@ sap.ui.define([
           },
           "BH": {
               "movieName": "Bhagamathie",
-              "imgUrl": "https://www.25cineframes.com/images/uploads/2018/01/Anushka-Shetty-Bhagmati-Movie-First-Look-ULTRA-HD-Posters-WallPapers.jpg",
+              "imgUrl": "resources/img/Bhag.png",
               "cast": [
                   {
                       "actor": "Anushka Shetty	 as   Bhaagamathie / Chanchala"
@@ -119,8 +119,8 @@ sap.ui.define([
           }
         };
         var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-        oRouter.getRoute("MV_Detail").attachMatched(this._onRouteMatched, this);        
-        
+        oRouter.getRoute("MV_Detail").attachMatched(this._onRouteMatched, this);
+
       },
       _onRouteMatched: function (oEvent) {
           debugger;
@@ -153,16 +153,15 @@ sap.ui.define([
 
           console.log(oEvent.getParameter("config").pattern);
       },
-      
+
       _onBindingChange : function (oEvent) {
         if (!this.getView().getBindingContext()) {
           this.getRouter().getTargets().display("notFound");
         }
       },
       onBackPress: function() {
-            window.history.go(-1);       
+            window.history.go(-1);
       }
 
     });
   });
-  

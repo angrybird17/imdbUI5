@@ -18,6 +18,18 @@ sap.ui.define([
     onInit: function () {
       var oModel = new JSONModel(jQuery.sap.getModulePath("com.myorg.myUI5App.model", "/data.json"));
       this.getView().setModel(oModel);
+
+
+      var oModel = new JSONModel("../../../../../model/dataSets.json");
+                this.getView().setModel(oModel);
+                var oModel = new JSONModel("../../../../../model/job_ids.json");
+                // The default limit of the model is set to 100. We want to show all the entries.
+                oModel.setSizeLimit(100000);
+                this.getView().setModel(oModel, "jobModel");
+                var oModel = new JSONModel("../../../../../model/tempBatchData.json");
+                // The default limit of the model is set to 100. We want to show all the entries.
+                oModel.setSizeLimit(100000);
+                this.getView().setModel(oModel, "batchDataModel");
     },
     onBackPress: function () {
       window.history.go(-1);
@@ -64,6 +76,7 @@ sap.ui.define([
 
 
       var tablePath = this.getView().byId('table').getSelectedItem().getBindingContextPath();
+      var oModel = this.getOwnerComponent().getModel("data")
       oModel.setProperty(tablePath, data)
 
 

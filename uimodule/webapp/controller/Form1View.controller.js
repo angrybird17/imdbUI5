@@ -13,23 +13,23 @@ sap.ui.define([
     "sap/m/Text"
   ], function(Controller, JSONModel, Fragment, Filter, FilterOperator, syncStyleClass, MessageToast, Dialog, DialogType, Button, ButtonType, Text) {
     "use strict";
-  
+
     return Controller.extend("com.myorg.myUI5App.controller.Form1View", {
       onInit: function() {
         var oModel = new JSONModel(jQuery.sap.getModulePath("com.myorg.myUI5App.model", "/data.json"));
-			  this.getView().setModel(oModel);
+        this.getView().setModel(oModel);
       },
-      
+
       _onSelectionChange: function (oEvent) {
         debugger;
         var selKey = oEvent.getParameter("selectedItem").getKey();
-  
+
         var oModel = this.getOwnerComponent().getModel();
         // var oModel = new JSONModel(jQuery.sap.getModulePath("com.myorg.myUI5App.model", "/data.json"));
-  
+
         // reset searchParam on every trigger
         // oModel.setProperty("/movie/Inspiring", null);
-  
+
         if (selKey === "Inspiring") {
           oModel.setProperty("/visible/Inspiring", true);
           oModel.setProperty("/visible/Comedy", false);
@@ -85,7 +85,7 @@ sap.ui.define([
           sap.ui.core.BusyIndicator.hide();
         }, 2000);
           }
-    
+
 
           route.navTo("MV_Detail", {
             movieName: selectedM
@@ -106,13 +106,12 @@ sap.ui.define([
             })
           });
         }
-  
+
         this.oDefaultMessageDialog.open();
       },
       onBackPress: function() {
-        window.history.go(-1);       
+        window.history.go(-1);
       }
 
     });
   });
-  

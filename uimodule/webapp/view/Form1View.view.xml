@@ -41,7 +41,7 @@ xmlns:f="sap.f">
 								press="onBackPress"
 								/>
 						</f:actions>
-						
+
 					</f:DynamicPageTitle>
 				</f:title>
 				<f:header height="1000px">
@@ -51,7 +51,7 @@ xmlns:f="sap.f">
 								<pages>
 									<Image src="https://i.pinimg.com/originals/31/ca/f2/31caf2fa888d01cd7658ed5d41a5798a.jpg" height="250px" width="600px"/>
 									<Image
-										src="https://www.upcomingmoviesdate.com/wp-content/uploads/2020/04/maxresdefault-4.jpg"
+										src="https://static.moviecrow.com/marquee/pvp-cinemas-acquired-bangalore-days/37829_thumb_665.jpg"
 										height="250px" width="600px"/>
 									<Image src="https://images-na.ssl-images-amazon.com/images/S/sgp-catalog-images/region_US/sphe-pursuit_of_happyness_2006-Full-Image_GalleryCover-en-US-1484001256987._UY500_UX667_RI_VLlDKyg2xplhPOpi73ReetPsQLmrUs3aG_TTW_.jpg"
 										height="250px" width="600px"/>
@@ -60,7 +60,7 @@ xmlns:f="sap.f">
 								</pages>
 							</Carousel>
 						</VBox>
-                        
+
 
 					</f:DynamicPageHeader>
 				</f:header>
@@ -76,10 +76,10 @@ xmlns:f="sap.f">
 								<core:Item key="Comedy" text="Comedy" />
 
                             </items>
-                        </Select>						
+                        </Select>
 					</VBox>
 					<VBox fitContainer="true" class="sapUiTinyMargin">
-						
+
 
 						<Label text="Select the Movie" visible="{/visible/Inspiring}" />
 						<ComboBox visible="{/visible/Inspiring}" placeholder="Movie with Rating"
@@ -97,18 +97,18 @@ xmlns:f="sap.f">
 							path: '/movie/Horror'
 						}" id="hSelect">
 							<core:ListItem key="{id}" text="{Name}" additionalText = "{Rating}"/>
-						</ComboBox>	
+						</ComboBox>
 						<Label text="Select the Movie" visible="{/visible/Comedy}" />
 						<ComboBox visible="{/visible/Comedy}" placeholder="Movie with Rating"
 						showSecondaryValues= "true"
 						items="{
 							path: '/movie/Comedy'}" id="cSelect">
 							<core:ListItem key="{id}" text="{Name}" additionalText = "{Rating}"/>
-						</ComboBox>	
-							
+						</ComboBox>
+
 
 					</VBox>
-						
+
 					</HBox>
 					<HBox id="hbox2" fitContainer="true" justifyContent="Center">
                     	<Button text="" icon="sap-icon://search" type="Emphasized" press="onGoPress"/>

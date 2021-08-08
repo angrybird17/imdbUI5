@@ -9,12 +9,12 @@
 							<ImageContent src="resources/img/profile.jpeg" />
 						</TileContent>
 					</GenericTile>
-					<!-- <GenericTile id="tilt1" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Demo"
+					<GenericTile id="tilt1" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Demo"
           subheader="Table Editor" press="demoPress" url="table" >
 						<TileContent>
 							<ImageContent src="sap-icon://provision" />
 						</TileContent>
-					</GenericTile> -->
+					</GenericTile>
 
 
           <!-- <GenericTile

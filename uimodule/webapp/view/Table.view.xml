@@ -6,178 +6,117 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:u="sap.ui.unified"
 	xmlns:core="sap.ui.core"
+  xmlns:m="sap.m"
     height="100%">
-	<Page
+	<Page id="page"
 		showHeader="true"
 		enableScrolling="true"
 		class="sapUiContentPadding">
-		<content>
+  	<content>
 
-        <IconTabBar
-		id="idIconTabBarNoIcons"
-		expanded="true"
-		class="sapUiResponsiveContentPadding">
-		<items>
-			<IconTabFilter text="DOC_LIST" key="doclist">
-				<!-- <t:Table
-				id="table"
-				rows="{/table}"
-				mode="SingleSelect"
-				visibleRowCount="7"
-				paste="onPaste"
-				ariaLabelledBy="title">
-				<t:extension>
-					<OverflowToolbar style="Clear">
-						<Title id="title" text="DOC_LIST Table"/>
-					</OverflowToolbar>
-				</t:extension>
-				<t:columns>
-					<t:Column width="11rem">
-						<Label text="Job ID" />
-						<t:template>
-							<Text text="{JobId}" wrapping="false" />
-						</t:template>
-					</t:Column>
-					<t:Column width="11rem">
-						<Label text="File Name" />
-						<t:template>
-							<Text text="{FileName}" wrapping="false" />
-						</t:template>
-					</t:Column>
-					<t:Column width="11rem">
-						<Label text="Document Type" />
-						<t:template>
-							<Text text="{DocumentType}" wrapping="false" />
-						</t:template>
-					</t:Column>
-					<t:Column width="11rem">
-						<Label text="Created on" />
-						<t:template>
-							<Text text="{CreateOn}" wrapping="false" />
-						</t:template>
-					</t:Column>
-					<t:Column width="11rem">
-						<Label text="Status" />
-						<t:template>
-							<Text text="{Status}" wrapping="false" />
-						</t:template>
-					</t:Column>
-					<t:Column width="11rem">
-						<Label text="Finished On" />
-						<t:template>
-							<Text text="{FinishedOn}" wrapping="false" />
-						</t:template>
-					</t:Column>
-					<t:Column width="11rem">
-						<Label text="Client ID" />
-						<t:template>
-							<Text text="{ClientId}" wrapping="false" />
-						</t:template>
-					</t:Column>
-					<t:Column width="11rem">
-						<Label text="Sender" />
-						<t:template>
-							<Text text="{Sender}" wrapping="false" />
-						</t:template>
-					</t:Column>
-					<t:Column width="11rem">
-						<Label text="Flag" />
-						<t:template>
-							<Text text="{Flag}" wrapping="false" />
-						</t:template>
-					</t:Column>
+<t:TreeTable id="TreeTableBasic"
+                                rows="{path:'/Jobs', parameters: {arrayNames:['batches']}}"
+                                selectionMode="Single"
+                                ariaLabelledBy="title"
+                                cellClick="showBatchData">
+                                <t:extension>
+                                    <m:OverflowToolbar style="Clear">
+                                        <m:Title id="title" text="Invoice Object Recommendation Dataset"/>
+                                        <m:ToolbarSpacer/>
+<m:Button icon="sap-icon://refresh" text="" type="Transparent" press="onPress" ariaLabelledBy="editButtonLabel"/>
+                                        <m:Button text="Collapse all" press="onCollapseAll"/>
+                                    </m:OverflowToolbar>
+                                </t:extension>
+                                <t:columns>
+                                    <t:Column width="20rem">
+                                        <m:Label text="Job Id"/>
+                                        <t:template>
+                                            <m:Text text="{id}" wrapping="false"/>
 
-				</t:columns>
-			</t:Table> -->
+                                        </t:template>
+                                    </t:Column>
+                                    <t:Column width="13rem">
+                                        <m:Label text="Batch Id"/>
+                                        <t:template>
+                                             <m:Link text="{BatchId}" emphasized="true" press="showBatchData"/>
+                                        </t:template>
+                                    </t:Column>
+                                    <t:Column width="9rem">
+                                        <m:Label text="Object Store Reference"/>
+                                        <t:template>
+                                            <m:Link text="{ObjectStoreRef}" emphasized="false" press="exportBatchData"/>
+                                        </t:template>
+                                    </t:Column>
+                                    <t:Column width="11rem">
+                                        <m:Label text="File Name"/>
+                                        <t:template>
+                                            <m:Text text="{FileName}" wrapping="false"/>
+                                        </t:template>
+                                    </t:Column>
+                                    <t:Column width="11rem">
+                                        <m:Label text="Created On"/>
+                                        <t:template>
+                                            <m:Text text="{CreatedOn}" wrapping="false"/>
+                                        </t:template>
+                                    </t:Column>
+                                    <t:Column width="11rem">
+                                        <m:Label text="CreatedBy"/>
+                                        <t:template>
+                                            <m:Text text="{CreatedBy}" wrapping="false"/>
+                                        </t:template>
+                                    </t:Column>
+                                    <t:Column width="11rem">
+                                        <m:Label text="FileSize"/>
+                                        <t:template>
+                                            <m:Text text="{FileSize}" wrapping="false"/>
+                                        </t:template>
+                                    </t:Column>
+                                    <t:Column width="11rem">
+                                        <m:Label text="Used In Training"/>
+                                        <t:template>
+                                            <m:Text text="{UsedInTraining}" wrapping="false"/>
+                                        </t:template>
+                                    </t:Column>
+                                    <t:Column width="11rem">
+                                        <m:Label text="Trained On"/>
+                                        <t:template>
+                                            <m:Text text="{TrainedOn}" wrapping="false"/>
+                                        </t:template>
+                                    </t:Column>
+                                    <t:Column width="11rem">
+                                        <m:Label text="Training Parameters"/>
+                                        <t:template>
+                                            <m:Text text="{TrainingParameters}" wrapping="false"/>
+                                        </t:template>
+                                    </t:Column>
+                                    <t:Column width="1rem">
+                                        <m:Label text=""/>
+                                        <t:template>
+                                            <!-- <m:Text text="{TrainingStatus}" wrapping="false"/> -->
+<m:Button icon="sap-icon://refresh" text="" type="Transparent" press="onPress" ariaLabelledBy="editButtonLabel"/>
 
 
+                                        </t:template>
+                                    </t:Column>
+                                    <t:Column width="11rem">
+                                        <m:Label text="Training Status"/>
+                                        <t:template>
+                                            <m:Text text="{TrainingStatus}" wrapping="false"/>
 
 
-      <Table id="table"
-      mode="SingleSelect"
-		inset="false"
-		items="{
-			path: '/table'
-		}">
-		<headerToolbar>
-			<OverflowToolbar>
-				<content>
-					<Title text="Products" level="H2"/>
-					<ToolbarSpacer />
+                                        </t:template>
+                                    </t:Column>
+                                    <t:Column width="11rem">
+                                        <m:Label text="Comments"/>
+                                        <t:template>
+                                            <m:Text text="{Comments}" wrapping="false"/>
+                                        </t:template>
+                                    </t:Column>
+                                </t:columns>
 
-				</content>
-			</OverflowToolbar>
-		</headerToolbar>
-		<columns>
-			<Column>
-				<Text text="JobId" />
-			</Column>
-			<Column>
-				<Text text="FileName" />
-			</Column>
-			<Column>
-				<Text text="DocumentType" />
-			</Column>
-			<Column>
-				<Text text="CreatedOn" />
-			</Column>
-			<Column>
-				<Text text="Status" />
-			</Column>
-			<Column>
-				<Text text="FinishedOn" />
-			</Column>
-			<Column>
-				<Text text="ClientId" />
-			</Column>
-			<Column>
-				<Text text="Sender" />
-			</Column>
-			<Column>
-				<Text text="Flag" />
-			</Column>
-		</columns>
-		<items>
-			<ColumnListItem>
-				<cells>
-					<Text
-						text="{JobId}" />
-					<Text
-						text="{FileName}" />
-					<Text
-						text="{DocumentType}" />
-					<Text
-						text="{CreatedOn}" />
-					<Text
-						text="{Status}" />
-					<Text
-						text="{FinishedOn}" />
-					<Text
-						text="{ClientId}" />
-					<Text
-						text="{Sender}" />
-					<Text
-						text="{Flag}" />
-				</cells>
-			</ColumnListItem>
-		</items>
-	</Table>
-			</IconTabFilter>
-
-			<IconTabFilter text="DOC_EXTRACT" key="docextract">
-				<Text text="Info content goes here ..." />
-			</IconTabFilter>
-
-		</items>
-	</IconTabBar>
+                            </t:TreeTable>
 
 		</content>
-        <footer>
-			<OverflowToolbar>
-				<ToolbarSpacer/>
-				<Button text="Edit/Mantain" type="Accept" press="onEditPress" ariaHasPopup="Dialog"/>
-				<Button text="Sync/Save All" type="Accept" />
-			</OverflowToolbar>
-		</footer>
+
 	</Page>
 </mvc:View>
